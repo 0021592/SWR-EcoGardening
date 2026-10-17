@@ -18,6 +18,8 @@ type IconName =
   | "image"
   | "check"
   | "droplet"
+  | "leaf"
+  | "crown"
   | "sun"
   | "sprout"
   | "clock"
@@ -55,6 +57,8 @@ function Icon({ name, size = 22, filled = false }: { name: IconName; size?: numb
     image: <><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="8.5" cy="9" r="1.5" /><path d="m21 15-5-5L5 20" /></>,
     check: <path d="m5 12 4 4L19 6" />,
     droplet: <path d="M12 2S5.5 9.2 5.5 14.3a6.5 6.5 0 0 0 13 0C18.5 9.2 12 2 12 2Z" />,
+    leaf: <><path d="M20 4c-8 0-14 3-14 10a6 6 0 0 0 6 6c7 0 10-6 8-16Z" /><path d="M4 21c3-5 7-8 12-11" /></>,
+    crown: <><path d="m2 8 5 4 5-7 5 7 5-4-2 12H4L2 8Z" /><path d="M4 17h16" /></>,
     sun: <><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></>,
     sprout: <><path d="M12 22V11" /><path d="M12 14C7 14 4 11.5 4 7c5 0 8 2.5 8 7ZM12 11c4.5 0 7-2.3 7-6-4.5 0-7 2.2-7 6Z" /></>,
     clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
@@ -104,7 +108,7 @@ function PlantObject({ type = "leaf", selected = false }: { type?: "leaf" | "flo
 }
 
 function Onboarding({ onComplete }: { onComplete: () => void }) {
-  const [level, setLevel] = useState<"Începător" | "Experimentat">("Începător");
+  const [level, setLevel] = useState<"Gratuit" | "Premium">("Gratuit");
   return (
     <div className="onboarding">
       <div className="onboarding-photo">
@@ -115,13 +119,13 @@ function Onboarding({ onComplete }: { onComplete: () => void }) {
         <div className="eyebrow">Grădina ta, mereu aproape</div>
         <div className="display-title">Crește plante.<br />Cunoaște oameni.</div>
         <p className="muted">Îngrijire ghidată, inspirație zilnică și o comunitate care crește împreună cu tine.</p>
-        <div className="level-label">Cum te descrii?</div>
+        <div className="level-label">Alege planul tău</div>
         <div className="level-grid">
-          {(["Începător", "Experimentat"] as const).map((item, index) => (
+          {(["Gratuit", "Premium"] as const).map((item, index) => (
             <button className={`level-card ${level === item ? "selected" : ""}`} onClick={() => setLevel(item)} key={item}>
-              <span className="level-icon"><Icon name={index ? "sprout" : "sun"} size={21} /></span>
+              <span className="level-icon"><Icon name={index ? "crown" : "leaf"} size={21} /></span>
               <strong>{item}</strong>
-              <small>{index ? "Am deja rădăcini" : "Pornesc de la zero"}</small>
+              <small>{index ? "Funcții premium" : "Planul de bază"}</small>
               <span className="select-dot">{level === item && <Icon name="check" size={13} />}</span>
             </button>
           ))}
@@ -492,17 +496,6 @@ function CalendarScreen({ carePlans, onOpenPlant, showUpgradePromptOnOpen, onDis
 }
 
 function GardenScreen({ carePlans, onUpdateCarePlant, initialSelectedPlantId }: { carePlans: ScannedPlant[]; onUpdateCarePlant: (plant: ScannedPlant) => void; initialSelectedPlantId: string }) {
-  const octalysisDrivers = [
-    { id: "meaning", label: "Sens", value: "Eco-impact", desc: "Plantăm pentru viitor", tone: "emerald" },
-    { id: "accomplishment", label: "Realizare", value: "+12 XP", desc: "Zile consecutive", tone: "amber" },
-    { id: "empowerment", label: "Putere", value: "Auto-hartă", desc: "Controlezi ritmul", tone: "teal" },
-    { id: "ownership", label: "Proprietate", value: "Zona ta", desc: "Spațiul tău", tone: "sage" },
-    { id: "social", label: "Social", value: "Share", desc: "Împărtășești progresele", tone: "lavender" },
-    { id: "scarcity", label: "Rarețe", value: "1/3", desc: "Culoare limitată", tone: "coral" },
-    { id: "uncertainty", label: "Surpriză", value: "Quest", desc: "Misiuni noi", tone: "gold" },
-    { id: "creativity", label: "Creativ", value: "Stil", desc: "Personalizezi grădina", tone: "mint" },
-  ];
-
   const [plants, setPlants] = useState([
     { id: "monstera", type: "leaf" as const, name: "Monstera", x: 21, y: 25, stage: "mature" as const, progress: 82, thirsty: true },
     { id: "basil", type: "herb" as const, name: "Busuioc", x: 68, y: 22, stage: "blooming" as const, progress: 58, thirsty: false },
@@ -513,12 +506,20 @@ function GardenScreen({ carePlans, onUpdateCarePlant, initialSelectedPlantId }: 
   const [layout, setLayout] = useState<"Balcon" | "Etajeră" | "Curte">("Balcon");
   const visiblePlants = plants;
   const selectedPlant = visiblePlants.find((plant) => plant.id === selectedPlantId);
+  const thirstyPlants = visiblePlants.filter((plant) => plant.thirsty);
   const updateSelectedPlant = (updates: Partial<ScannedPlant>) => {
     const updatedPlant = plants.find((plant) => plant.id === selectedPlantId);
     if (!updatedPlant) return;
     const nextPlant = { ...updatedPlant, ...updates };
     setPlants((current) => current.map((plant) => plant.id === selectedPlantId ? nextPlant : plant));
     if (carePlans.some((carePlant) => carePlant.id === selectedPlantId)) onUpdateCarePlant(nextPlant);
+  };
+  const waterPlant = (plantId: string) => {
+    const plant = plants.find((item) => item.id === plantId);
+    if (!plant) return;
+    const updatedPlant = { ...plant, thirsty: false };
+    setPlants((current) => current.map((item) => item.id === plantId ? updatedPlant : item));
+    if (carePlans.some((carePlant) => carePlant.id === plantId)) onUpdateCarePlant(updatedPlant);
   };
   const addPlant = (type: "leaf" | "flower" | "herb", name: string) => {
     if (visiblePlants.length >= 6) return;
@@ -530,53 +531,19 @@ function GardenScreen({ carePlans, onUpdateCarePlant, initialSelectedPlantId }: 
 
   return (
     <div className="screen padded-screen garden-screen">
-      <header className="section-header"><div><span className="eyebrow">Planner vizual</span><h1>{layout === "Balcon" ? "Grădina mea" : layout === "Etajeră" ? "Etajera mea" : "Curtea mea"}</h1></div><IconButton icon="settings" label="Setări grădină" /></header>
+      <header className="section-header"><div><span className="eyebrow">Spațiul tău</span><h1>{layout === "Balcon" ? "Grădina mea" : layout === "Etajeră" ? "Etajera mea" : "Curtea mea"}</h1></div><IconButton icon="settings" label="Setări grădină" /></header>
 
-      <div className="garden-hero">
-        <div className="garden-hero__info">
-          <div className="garden-kpi-row">
-            <div className="garden-kpi">
-              <span>Streak</span>
-              <strong>7 zile</strong>
-            </div>
-            <div className="garden-kpi accent">
-              <span>XP</span>
-              <strong>480</strong>
-            </div>
-          </div>
-          <div className="garden-growth">
-            <div><span>Creșterea grădinii</span><b>68%</b></div>
-            <div className="growth-track"><span /></div>
-          </div>
-        </div>
-        <div className="garden-lens" aria-hidden="true">
-          <div className="sun-glow" />
-          <PlantObject type="leaf" selected />
-          <PlantObject type="flower" />
-          <PlantObject type="herb" />
-        </div>
-      </div>
-
-      <div className="octalysis-panel">
-        <div className="list-heading"><div><h2>Octalysis</h2><span>Motivație pentru a reveni</span></div></div>
-        <div className="octalysis-grid">
-          {octalysisDrivers.map((driver) => (
-            <div className={`octalysis-card ${driver.tone}`} key={driver.id}>
-              <span>{driver.label}</span>
-              <strong>{driver.value}</strong>
-              <small>{driver.desc}</small>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="garden-meta"><span><Icon name="map" size={15} /> {layout === "Balcon" ? "6 m²" : layout === "Etajeră" ? "Interior" : "18 m²"}</span><span><Icon name="sun" size={15} /> {layout === "Curte" ? "Soare mixt" : "Sud-est"}</span><span className="garden-badge"><Icon name="check" size={13} /> Prima recoltă</span></div>
+      <section className={`garden-summary ${thirstyPlants.length ? "needs-water" : "all-watered"}`} aria-live="polite">
+        <div className="garden-summary-count"><Icon name="garden" size={19} /><span><b>{visiblePlants.length} plante</b><small>{thirstyPlants.length ? `${thirstyPlants.length} au nevoie de apă` : "Toate sunt îngrijite"}</small></span></div>
+        {thirstyPlants[0] && <button className="water-action" onClick={() => waterPlant(thirstyPlants[0].id)}><Icon name="droplet" size={15} /> Am udat-o</button>}
+      </section>
       <div className="layout-picker" role="group" aria-label="Alege spațiul grădinii">
         {(["Balcon", "Etajeră", "Curte"] as const).map((item) => <button key={item} className={layout === item ? "active" : ""} onClick={() => setLayout(item)}>{item}</button>)}
       </div>
+      <div className="garden-map-heading"><h2>Plantele tale</h2><span>Atinge o plantă pentru detalii</span></div>
       <div className="garden-canvas">
         <div className="canvas-grid" />
-        <div className="balcony-edge">{layout === "Balcon" ? "BALUSTRADĂ · LUMINĂ DIRECTĂ" : layout === "Etajeră" ? "RAFT SUPERIOR · LUMINĂ FILTRATĂ" : "ZONĂ DE PLANTARE · SOARE MIXT"}</div>
+        <div className="balcony-edge">{layout === "Balcon" ? "BALCON" : layout === "Etajeră" ? "ETAJERĂ" : "CURTE"}</div>
         {visiblePlants.map((plant) => (
           <button className={`placed-plant ${selectedPlantId === plant.id ? "selected" : ""}`} key={plant.id} style={{ left: `${plant.x}%`, top: `${plant.y}%` }} onClick={() => setSelectedPlantId(plant.id)} aria-label={`${plant.name}, ${plant.stage === "seedling" ? "răsad" : plant.stage === "blooming" ? "înflorire" : "matură"}`}>
             <PlantObject type={plant.type} selected={selectedPlantId === plant.id} />
@@ -586,12 +553,14 @@ function GardenScreen({ carePlans, onUpdateCarePlant, initialSelectedPlantId }: 
         ))}
         <div className="door-shape">{layout === "Balcon" ? "UȘĂ" : layout === "Etajeră" ? "FEREASTRĂ" : "ALEE"}</div>
       </div>
-      <div className="planner-tip"><Icon name="sun" size={17} /><span>Zona de sus primește aproximativ <b>7 ore de lumină</b>.</span></div>
       {selectedPlant && <section className="plant-profile-editor">
-        <div className="plant-profile-heading"><div><span className="eyebrow">Profilul plantei</span><b>Personalizează-ți planta</b></div><span className="growth-badge">{selectedPlant.stage === "seedling" ? "Răsad" : selectedPlant.stage === "blooming" ? "Înflorire" : "Matură"}</span></div>
-        <label className="plant-name-field">Numele plantei<input value={selectedPlant.name} onChange={(event) => updateSelectedPlant({ name: event.target.value })} aria-label="Numele plantei" /></label>
-        <label className="stage-picker">Etapă de creștere<select value={selectedPlant.stage} onChange={(event) => updateSelectedPlant({ stage: event.target.value as ScannedPlant["stage"] })}><option value="seedling">Răsad</option><option value="blooming">Înflorire</option><option value="mature">Matură</option></select></label>
-        <div className="plant-progress"><div><span>Progresul plantei</span><b>{selectedPlant.progress}%</b></div><input type="range" min="0" max="100" value={selectedPlant.progress} onChange={(event) => updateSelectedPlant({ progress: Number(event.target.value) })} aria-label="Progresul plantei" /><div className="growth-track"><span style={{ width: `${selectedPlant.progress}%` }} /></div></div>
+        <div className="selected-plant-summary"><PlantMark type={selectedPlant.type} /><div className="selected-plant-copy"><b>{selectedPlant.name}</b><small>{selectedPlant.stage === "seedling" ? "Răsad" : selectedPlant.stage === "blooming" ? "Înflorire" : "Plantă matură"} · Progres {selectedPlant.progress}%</small><span className="selected-plant-progress"><i style={{ width: `${selectedPlant.progress}%` }} /></span></div>{selectedPlant.thirsty && <span className="selected-plant-status">De udat</span>}</div>
+        <details className="plant-edit-details">
+          <summary>Editează detaliile</summary>
+          <label className="plant-name-field">Numele plantei<input value={selectedPlant.name} onChange={(event) => updateSelectedPlant({ name: event.target.value })} aria-label="Numele plantei" /></label>
+          <label className="stage-picker">Etapă de creștere<select value={selectedPlant.stage} onChange={(event) => updateSelectedPlant({ stage: event.target.value as ScannedPlant["stage"] })}><option value="seedling">Răsad</option><option value="blooming">Înflorire</option><option value="mature">Matură</option></select></label>
+          <div className="plant-progress"><div><span>Progresul plantei</span><b>{selectedPlant.progress}%</b></div><input type="range" min="0" max="100" value={selectedPlant.progress} onChange={(event) => updateSelectedPlant({ progress: Number(event.target.value) })} aria-label="Progresul plantei" /></div>
+        </details>
       </section>}
       <div className="plant-tray">
         <div className="list-heading"><div><h2>Adaugă o plantă</h2><span>Atinge pentru a plasa</span></div></div>
