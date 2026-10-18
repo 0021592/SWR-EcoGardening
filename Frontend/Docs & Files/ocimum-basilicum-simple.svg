@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <defs>
+    <g id="leaf">
+      <path d="M0,0 C-48,-30 -48,-104 0,-156 Z" fill="#7ccd5f"/>
+      <path d="M0,0 C48,-30 48,-104 0,-156 Z" fill="#4fa645"/>
+    </g>
+  </defs>
+
+  <!-- pot -->
+  <path d="M190,395 L230,520 A90,52 0 0 0 410,520 L450,395 Z" fill="#34353a"/>
+  <path d="M190,395 L230,520 A90,52 0 0 0 320,572 L320,470 Z" fill="#4a4b50"/>
+  <ellipse cx="320" cy="395" rx="130" ry="75" fill="#6a6b70"/>
+  <ellipse cx="320" cy="397" rx="106" ry="61" fill="#2a2420"/>
+
+  <!-- stem -->
+  <rect x="313" y="215" width="14" height="190" rx="7" fill="#7a4a28"/>
+
+  <!-- leaves -->
+  <g transform="translate(320,350) rotate(-75) scale(0.95)"><use href="#leaf"/></g>
+  <g transform="translate(320,350) rotate(75) scale(0.95)"><use href="#leaf"/></g>
+  <g transform="translate(320,298) rotate(-50) scale(0.85)"><use href="#leaf"/></g>
+  <g transform="translate(320,298) rotate(50) scale(0.85)"><use href="#leaf"/></g>
+  <g transform="translate(320,252) rotate(-28) scale(0.68)"><use href="#leaf"/></g>
+  <g transform="translate(320,252) rotate(28) scale(0.68)"><use href="#leaf"/></g>
+  <g transform="translate(320,222) rotate(-8) scale(0.4)"><use href="#leaf"/></g>
+  <g transform="translate(320,222) rotate(8) scale(0.4)"><use href="#leaf"/></g>
+</svg>

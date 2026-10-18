@@ -1,0 +1,111 @@
+DB_PLANTE_URBANSPROUT_MVP | limba=ro | nr_plante=5 | scop=potrivirea plantelor cu spatiul si conditiile utilizatorului (apartament/balcon) in aplicatia UrbanSprout | format=o inregistrare per planta, campuri cheie=valoare pe linii separate, inregistrarile separate prin ---, listele interne separate prin ";" | cheile diagnostic contin perechi simptom->cauza/remediu
+
+---
+id=1
+nume_comun=Busuioc Genovese
+nume_stiintific=Ocimum basilicum
+tipologie=Iarba aromatica anuala; recoltare continua de frunze
+dificultate=Usor (Incepator)
+ghiveci_volum=2-3 L per planta
+ghiveci_adancime_sol=minim 15-18 cm
+ghiveci_greutate=~2.5-3.2 kg (udat la capacitate)
+ghiveci_tip=teracota sau plastic cu orificii generoase de drenaj; jardiniere
+diametru_maturitate=20-30 cm diametru corola; inaltime 30-40 cm
+lumina_ore_soare=4-6 h soare direct/zi
+orientare=Sud, Sud-Est sau Est luminos; evita ferestrele orientate exclusiv spre Nord
+led=Excelenta; 12-14 h/zi sub LED Full Spectrum, minim 25-30 W la 20 cm distanta
+udare_frecventa=la 2-3 zile vara; iarna la 5-7 zile; se uda la baza tulpinii cand primii 2 cm de sol sunt uscati
+udare_sensibilitate_exces=Ridicata; apa stagnanta in farfurie duce la asfixierea radacinilor si putregai negru
+substrat=universal aerat: 70% turba/pamant flori + 20% perlit + 10% humus de rame; pH 6.0-7.0
+ingrasamant=lichid bio pentru ierburi aromatice, bogat in azot (N), o data la 2-3 saptamani
+toxicitate_animale=Non-toxic pentru pisici si caini (confirmat ASPCA)
+diagnostic=frunze ingalbenite jos -> udare excesiva sau lipsa de azot; frunze mici si tulpini alungite -> lumina insuficienta; daunatori: musculite albe de sera si acarieni (paianjen rosu) -> sapun de potasiu
+recomandari_urban=ciupiti regulat varfurile tulpinii deasupra a doua noduri pentru tufa deasa; rupeti imediat bobocii florali ca sa nu se amareasca frunzele
+
+---
+id=2
+nume_comun=Rosii Cherry Pitice "Tiny Tim"
+nume_stiintific=Solanum lycopersicum
+tipologie=Legume fructifera micro-dwarf determinata; productie densa pe pervaz
+dificultate=Mediu / Intermediar
+ghiveci_volum=5-7 L (optim 7 L pentru productie maxima)
+ghiveci_adancime_sol=minim 20-25 cm
+ghiveci_greutate=~6.0-7.5 kg (substrat udat + planta incarcata de rod)
+ghiveci_tip=ghiveci adanc din plastic dur sau sac textil "grow bag" de 2 galoane
+diametru_maturitate=25-35 cm diametru; inaltime compacta 30-40 cm (nu necesita palisare inalta)
+lumina_ore_soare=6-8 h soare direct intens (crucial pentru inflorire si coacerea fructelor)
+orientare=Sud sau Sud-Vest fara umbrire de la alte cladiri
+led=Ridicata, dar necesita intensitate mare: LED dedicat cultivarii, minim 45-60 W, 14-16 h/zi
+udare_frecventa=zilnic pe timp de canicula pe balcon; la 2-3 zile in interior; necesar de apa constant si regulat
+udare_sensibilitate_exces=Medie spre mare; udarea neregulata produce crapararea fructelor si putregai apical (calciu neabsorbit)
+substrat=fertil si bogat: 60% pamant legume + 20% compost matur + 20% perlit; pH 6.2-6.8
+ingrasamant=organic pentru tomate, bogat in fosfor (P) si potasiu (K) dupa aparitia florilor, bilunar
+toxicitate_animale=TOXICA pentru pisici si caini (frunze si tulpini contin solanina); fructele bine coapte sunt sigure
+diagnostic=varfuri negre la fructe (putregai apical) -> udare neregulata + deficit de calciu; frunze rasucite -> stres termic sau vant puternic pe balcon; daunatori: musculita minieră si afide -> prevenire cu capcane galbene lipicioase
+recomandari_urban=la interior agitati usor tulpina sau atingeti florile cu o pensula fina la fiecare 2 zile pentru polenizare fara albine
+
+---
+id=3
+nume_comun=Ardei Iute Pitic "Prairie Fire"
+nume_stiintific=Capsicum annuum
+tipologie=Condiment/decorativ comestibil, peren in interior; productie masiva de pastai
+dificultate=Mediu
+ghiveci_volum=3-4 L
+ghiveci_adancime_sol=18-22 cm
+ghiveci_greutate=~3.5-4.5 kg
+ghiveci_tip=ceramic nesmaltuit sau plastic cu gauri mari de drenaj
+diametru_maturitate=20-25 cm diametru; inaltime compacta 20-25 cm
+lumina_ore_soare=5-6 h soare direct
+orientare=Sud sau Vest calduros; necesita caldura constanta (peste 20 C) pentru maturare
+led=Buna; LED spectru larg 35 W+, 12-14 h/zi iarna
+udare_frecventa=rara si profunda, la 4-6 zile; lasati primii 3 cm de sol sa se usuce complet intre udari
+udare_sensibilitate_exces=Foarte ridicata; nu tolereaza "picioarele ude", radacinile se asfixiaza rapid
+substrat=nisipos-lutos, foarte bine drenat: 60% pamant flori + 25% perlit + 15% vermiculit; pH 6.0-6.8
+ingrasamant=organic lichid cu raport N-P-K orientat spre potasiu si magneziu, o data pe luna
+toxicitate_animale=TOXICA/IRITANTA pentru animale de companie; capsaicina provoaca arsuri bucale, hipersalivatie si varsaturi
+diagnostic=caderea masiva a florilor -> oscilatii mari de temperatura (sub 15 C noaptea) sau lipsa de lumina; frunze lipicioase -> afide, se curata cu jet fin de apa si emulsie de ulei de neem
+recomandari_urban=planta perena in apartament; ferita de frig iarna pe pervaz rodeste 2-3 ani
+
+---
+id=4
+nume_comun=Ridichi Rotunde de Balcon "Saxa"
+nume_stiintific=Raphanus sativus
+tipologie=Radacinoasa cu ciclu ultra-rapid (22-28 zile); ideala primavara si toamna
+dificultate=Usor
+ghiveci_volum=1 L per 3-4 plante (sau lada/jardiniera cu 5 cm intre plante)
+ghiveci_adancime_sol=minim 15 cm
+ghiveci_greutate=~2.0-3.0 kg per lada
+ghiveci_tip=jardiniere dreptunghiulare putin adanci sau cutii reciclate din lemn/plastic cu gauri
+diametru_maturitate=foliaj 10-12 cm; radacina globulara 2.5-3.5 cm diametru
+lumina_ore_soare=4-5 h soare direct
+orientare=Est sau Vest; prefera 14-18 C; la soare torid de Sud face doar frunze
+led=Buna; becuri LED economice lumina alba rece 6500K, 12 h/zi
+udare_frecventa=usoara dar strict constanta (zilnic sau la 2 zile, cantitati mici); pamantul nu trebuie sa se usuce complet
+udare_sensibilitate_exces=Medie; solul namolos putrezeste bulbul, iar uscaciunea urmata de udare brusca crapa ridichile si le face lemnoase
+substrat=pamant foarte fin, cernut, nisipos, fara pietre sau bulgari (deformeaza radacina); pH 6.0-7.0
+ingrasamant=FARA ingrasaminte cu mult azot (frunis urias, bulbi mici); doar compost fin amestecat la inceput
+toxicitate_animale=Non-toxica pentru caini si pisici
+diagnostic=frunze mari dar fara bulb -> temperatura peste 22 C, prea mult azot sau semanat prea des; radacini crapate sau lemnoase -> udare haotica (seceta alternata cu udari masive)
+recomandari_urban=semanati esalonat cate 10 seminte la fiecare 10 zile, martie-mai si septembrie-noiembrie, pentru recolte non-stop
+
+---
+id=5
+nume_comun=Castravete de Balcon (tip bush/pitic, ex. "Bush Champion", "Salad Bush", "Patio Pik", "Bush Whopper")
+nume_stiintific=Cucumis sativus
+tipologie=Legume fructifera anuala; soiuri bush compacte pentru ghiveci, soiurile agatatoare necesita spalier; recoltare frecventa a fructelor
+dificultate=Mediu / Intermediar
+ghiveci_volum=minim ~19 L (5 galoane) per planta
+ghiveci_adancime_sol=minim 25 cm
+ghiveci_greutate=~15-20 kg (ESTIMARE: substrat udat, ghiveci de 19 L)
+ghiveci_tip=ghiveci mare din plastic, lemn sau jardiniera adanca cu drenaj; lemnul retine umiditatea, teracota se usuca rapid; spalier sau suport pentru soiurile agatatoare
+diametru_maturitate=bush: ~90 cm diametru (se poate tine mai compact), inaltime 20-25 cm; agatator: pana la ~180 cm inaltime pe spalier
+lumina_ore_soare=6-8 h soare direct; tolereaza umbra usoara vara
+orientare=Sud sau Vest, adapostit de vant; umbrire usoara la amiaza in canicula
+led=Ridicata (ESTIMARE: similar rosiilor, LED dedicat cultivarii 45-60 W, 14-16 h/zi); soiurile bush sunt cele potrivite pentru interior
+udare_frecventa=constanta si regulata, ~2.5 cm apa/saptamana, mai mult in canicula si in ghiveci (zilnic vara pe balcon); udare adanca la baza, fara a uda frunzele; mulci la suprafata reduce evaporarea
+udare_sensibilitate_exces=Medie spre mare; seceta si udarea neregulata cauza amaraciune si fructe deformate, frunzele ude favorizeaza mana
+substrat=usor, bine drenat, bogat in materie organica; pH 6.0-6.8; planta consumatoare mare de nutrienti
+ingrasamant=granule cu eliberare lenta dupa aparitia primelor frunze adevarate, completat cu ingrasamant lichid la 2 saptamani; mai bogat in potasiu la fructificare
+toxicitate_animale=Non-toxic pentru caini si pisici (planta si fruct sunt considerate sigure; neverificat in lista ASPCA)
+diagnostic=pulbere alba pe frunze -> faina (powdery mildew), aer circulat si frunze uscate, indepartati frunzele afectate; pete galbene pe fata frunzei -> mana (downy mildew); stippling fin, panze si frunze galbui-bronzate -> paianjen rosu (spider mites), jet de apa, sapun insecticid sau ulei horticol; frunze deformate, lipicioase -> afide, sapun insecticid (transmit virusul mozaicului, fara tratament); frunze galbene mozaicate + crestere pipernicita -> virusul mozaicului castravetelui; flori fara fructe -> polenizare insuficienta (primele flori sunt masculine); fructe amare -> stres termic sau hidric (cucurbitacina); frunze gaurite, scheletizate -> gandaci de castravete (in aer liber), adunare manuala; fructe care nu mai apar -> fructele mature neculese opresc productia
+recomandari_urban=la interior sau fara insecte polenizatoare polenizati manual cu pensula (floare masculina catre cea feminina cu mini-fruct la baza) sau alegeti soiuri partenocarpice; culegeti des fructele pentru productie continua; alegeti soiuri rezistente la mana, faina si virusul mozaicului

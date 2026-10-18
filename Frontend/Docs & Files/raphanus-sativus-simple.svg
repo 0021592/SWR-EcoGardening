@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <defs>
+    <!-- radish leaf: red petiole + broad lobed blade, points up from origin -->
+    <g id="rl">
+      <rect x="-3.5" y="-86" width="7" height="86" fill="#c9506a"/>
+      <g transform="translate(0,-70) scale(0.7,0.95)">
+        <path d="M0,0 C-30,-4 -56,-38 -48,-84 C-44,-112 -20,-128 0,-132 Z" fill="#7ccd5f"/>
+        <path d="M0,0 C30,-4 56,-38 48,-84 C44,-112 20,-128 0,-132 Z" fill="#4fa645"/>
+        <ellipse cx="-30" cy="-30" rx="17" ry="9" transform="rotate(-35 -30 -30)" fill="#7ccd5f"/>
+        <ellipse cx="30" cy="-30" rx="17" ry="9" transform="rotate(35 30 -30)" fill="#4fa645"/>
+        <path d="M0,-4 L0,-120" stroke="#b9e59a" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- pot -->
+  <path d="M190,395 L230,520 A90,52 0 0 0 410,520 L450,395 Z" fill="#34353a"/>
+  <path d="M190,395 L230,520 A90,52 0 0 0 320,572 L320,470 Z" fill="#4a4b50"/>
+  <ellipse cx="320" cy="395" rx="130" ry="75" fill="#6a6b70"/>
+  <ellipse cx="320" cy="397" rx="106" ry="61" fill="#2a2420"/>
+
+  <!-- leaves -->
+  <g transform="translate(320,364) rotate(-74) scale(0.86)"><use href="#rl"/></g>
+  <g transform="translate(320,364) rotate(74) scale(0.86)"><use href="#rl"/></g>
+  <g transform="translate(320,364) rotate(-46) scale(0.98)"><use href="#rl"/></g>
+  <g transform="translate(320,364) rotate(46) scale(0.98)"><use href="#rl"/></g>
+  <g transform="translate(320,364) rotate(-20) scale(1.04)"><use href="#rl"/></g>
+  <g transform="translate(320,364) rotate(20) scale(1.04)"><use href="#rl"/></g>
+  <g transform="translate(320,364) rotate(0) scale(0.9)"><use href="#rl"/></g>
+
+  <!-- bulb -->
+  <ellipse cx="320" cy="388" rx="52" ry="46" fill="#c12d45"/>
+  <path d="M320,342 A52,46 0 0 0 320,434 Z" fill="#ec5a6a"/>
+  <ellipse cx="320" cy="421" rx="60" ry="18" fill="#2a2420"/>
+</svg>

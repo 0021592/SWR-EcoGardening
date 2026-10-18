@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <defs>
+    <g id="cl">
+      <path d="M0,0 C-40,-24 -42,-84 0,-150 Z" fill="#7ccd5f"/>
+      <path d="M0,0 C40,-24 42,-84 0,-150 Z" fill="#4fa645"/>
+    </g>
+    <!-- pepper hangs down from origin (cap at top) -->
+    <g id="pepR">
+      <path d="M0,0 C-24,0 -28,30 -17,62 C-11,80 -4,92 0,98 Z" fill="#ec5044"/>
+      <path d="M0,0 C24,0 28,30 17,62 C11,80 4,92 0,98 Z" fill="#c4352d"/>
+      <ellipse cx="0" cy="0" rx="15" ry="6" fill="#4fa645"/>
+      <rect x="-3" y="-16" width="6" height="16" rx="3" fill="#4fa645"/>
+    </g>
+    <g id="pepG">
+      <path d="M0,0 C-24,0 -28,30 -17,62 C-11,80 -4,92 0,98 Z" fill="#9ed957"/>
+      <path d="M0,0 C24,0 28,30 17,62 C11,80 4,92 0,98 Z" fill="#6fae3c"/>
+      <ellipse cx="0" cy="0" rx="15" ry="6" fill="#3f8f3a"/>
+      <rect x="-3" y="-16" width="6" height="16" rx="3" fill="#3f8f3a"/>
+    </g>
+  </defs>
+
+  <!-- pot -->
+  <path d="M190,395 L230,520 A90,52 0 0 0 410,520 L450,395 Z" fill="#34353a"/>
+  <path d="M190,395 L230,520 A90,52 0 0 0 320,572 L320,470 Z" fill="#4a4b50"/>
+  <ellipse cx="320" cy="395" rx="130" ry="75" fill="#6a6b70"/>
+  <ellipse cx="320" cy="397" rx="106" ry="61" fill="#2a2420"/>
+
+  <!-- stem -->
+  <rect x="313" y="200" width="14" height="205" rx="7" fill="#5f8f3a"/>
+
+  <!-- back leaves -->
+  <g transform="translate(320,345) rotate(-68) scale(0.95)"><use href="#cl"/></g>
+  <g transform="translate(320,300) rotate(52) scale(0.88)"><use href="#cl"/></g>
+  <g transform="translate(320,258) rotate(-40) scale(0.76)"><use href="#cl"/></g>
+  <g transform="translate(320,222) rotate(26) scale(0.58)"><use href="#cl"/></g>
+  <g transform="translate(320,205) rotate(-8) scale(0.42)"><use href="#cl"/></g>
+
+  <!-- front leaves -->
+  <g transform="translate(320,345) rotate(70) scale(0.9)"><use href="#cl"/></g>
+  <g transform="translate(320,240) rotate(44) scale(0.66)"><use href="#cl"/></g>
+
+  <!-- peppers -->
+  <path d="M320,300 Q292,288 270,314" stroke="#4fa645" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g transform="translate(270,316) rotate(6) scale(0.82)"><use href="#pepR"/></g>
+  <path d="M320,282 Q350,270 374,296" stroke="#4fa645" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g transform="translate(374,298) rotate(-6) scale(0.78)"><use href="#pepR"/></g>
+  <path d="M320,336 Q338,336 344,350" stroke="#4fa645" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g transform="translate(344,352) rotate(-4) scale(0.62)"><use href="#pepG"/></g>
+</svg>

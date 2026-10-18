@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <defs>
+    <!-- lobed cucumber leaf on a petiole, points up from origin -->
+    <g id="cu">
+      <rect x="-3" y="-50" width="6" height="50" fill="#5f8f3a"/>
+      <g transform="translate(0,-46)">
+        <path d="M0,0 C-28,2 -56,-6 -64,-30 C-52,-34 -50,-44 -54,-60 C-40,-58 -34,-66 -32,-84 C-20,-76 -10,-84 0,-104 Z" fill="#7ccd5f"/>
+        <path d="M0,0 C28,2 56,-6 64,-30 C52,-34 50,-44 54,-60 C40,-58 34,-66 32,-84 C20,-76 10,-84 0,-104 Z" fill="#4fa645"/>
+        <path d="M0,-4 L0,-92" stroke="#b9e59a" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </g>
+    <!-- cucumber hangs down from origin -->
+    <g id="cuke">
+      <rect x="-15" y="0" width="30" height="104" rx="15" fill="#3d8230"/>
+      <path d="M0,0 H0 V104 H-0 Z" fill="none"/>
+      <path d="M0,0 L0,104 A15,15 0 0 1 -15,89 L-15,15 A15,15 0 0 1 0,0 Z" fill="#5aa63f"/>
+      <path d="M-7,18 L-7,84" stroke="#9ad06a" stroke-width="3" stroke-linecap="round"/>
+      <rect x="-3" y="-14" width="6" height="16" rx="3" fill="#5f8f3a"/>
+    </g>
+  </defs>
+
+  <!-- pot -->
+  <path d="M190,395 L230,520 A90,52 0 0 0 410,520 L450,395 Z" fill="#34353a"/>
+  <path d="M190,395 L230,520 A90,52 0 0 0 320,572 L320,470 Z" fill="#4a4b50"/>
+  <ellipse cx="320" cy="395" rx="130" ry="75" fill="#6a6b70"/>
+  <ellipse cx="320" cy="397" rx="106" ry="61" fill="#2a2420"/>
+
+  <!-- stem -->
+  <rect x="313" y="190" width="14" height="215" rx="7" fill="#5f8f3a"/>
+
+  <!-- leaves -->
+  <g transform="translate(320,352) rotate(-62) scale(0.92)"><use href="#cu"/></g>
+  <g transform="translate(320,318) rotate(58) scale(0.92)"><use href="#cu"/></g>
+  <g transform="translate(320,282) rotate(-44) scale(0.83)"><use href="#cu"/></g>
+  <g transform="translate(320,248) rotate(40) scale(0.73)"><use href="#cu"/></g>
+  <g transform="translate(320,208) rotate(-14) scale(0.59)"><use href="#cu"/></g>
+
+  <!-- tendril -->
+  <path d="M320,262 C348,248 366,262 356,276 C349,285 338,278 343,270" stroke="#5f8f3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- cucumbers -->
+  <path d="M320,330 Q296,322 272,346" stroke="#5f8f3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g transform="translate(272,348) rotate(6) scale(0.9)"><use href="#cuke"/></g>
+  <path d="M320,300 Q346,292 372,316" stroke="#5f8f3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g transform="translate(372,318) rotate(-6) scale(0.8)"><use href="#cuke"/></g>
+</svg>
